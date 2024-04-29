@@ -15,6 +15,7 @@ h1 {
     display: flex;
     justify-content: flex-end;
     margin: 20px;
+    cursor: pointer; 
 }
 
 .menu-list{
@@ -153,7 +154,7 @@ h1 {
     height: 48px;
     top: 4em;
     background-color: lightslategray; 
-    border: none; 
+    border: none;
   }
   
   #login-btn:hover {
