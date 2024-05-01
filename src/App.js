@@ -17,7 +17,7 @@ import PrivateRoute from "./route/PrivateRoute";
 // 5-1. 로그아웃이 되면 상품 디테일 페이지를 볼 수 없다. 다시 로그인 페이지가 나온다.
 // 6. 상품을 검색할 수 있다.
 function App() {
-  const[authenticate,setAuthenticate]=useState(false) //true = 로그인 / false = 비로그인
+  const [authenticate,setAuthenticate]=useState(false) //true = 로그인 / false = 비로그인
   const location = useLocation();
   const isLoginPage = location.pathname ==="/login";
 
