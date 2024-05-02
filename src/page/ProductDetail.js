@@ -12,7 +12,6 @@ const ProductDetail = () => {
     let url=`http://localhost:5000/products/${id}`;
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
     setProduct(data);
   }
   useEffect(()=>{
@@ -30,7 +29,7 @@ const ProductDetail = () => {
           <div className="detail-price">{product?.price}</div>
           <DetailDropdown />
           <Button className="buy-btn" variant="success">구매하기</Button>
-          
+          <Button variant="outline-light">Light</Button>{' '}
           </Col>
         </Row>
     </Container>

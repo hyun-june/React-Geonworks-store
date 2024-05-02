@@ -9,11 +9,9 @@ import {useNavigate} from "react-router-dom"
 const Login = ({setAuthenticate}) => {
   const navigate = useNavigate();
   const handleTabClick = (content) => {
-    console.log(content); // 콘솔에 해당 탭의 내용을 출력
   };
   const loginUser = (event) => {
     event.preventDefault();
-    console.log("login")
     setAuthenticate(true);
     navigate("/");
   };
