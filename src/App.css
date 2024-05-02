@@ -195,7 +195,66 @@ li:nth-last-child(2)::before,li:last-child::before  {
 }
 
 /*상세 페이지*/
+.detail-container{
+  display: flex;
+  justify-content: center;
+}
+
 .product-img{
   display: flex;
   justify-content: flex-end;
+  padding: 0px;
+}
+
+.detail-img{
+  border: 1px solid #777;
+}
+
+.detail-page{
+  border-right: 1px solid #777;
+  border-top: 1px solid #777;
+  border-bottom: 1px solid #777;
+  padding: 30px;
+}
+.detail-title{
+  font-size: 20px;
+  font-weight: bolder;
+  color: #222222;
+}
+
+.detail-price{
+  margin-top: 15px;
+  margin-right: 50px;
+  font-size: 24px;
+  font-weight: bolder;
+  color: #d40022;
+  text-align: right;
+}
+
+#dropdown-basic-button{
+  width: 430px;
+  height: 36px;
+  background-color: white;
+  border: 1px solid #777;
+  color:  black;
+  position: relative;
+  font-size: 15px;
+  top: 1em;
+}
+
+.buy-btn{
+  position: relative;
+  width: 430px;
+  height: 50px;
+  top: 2em;
+}
+
+#dropdown-menu{
+  border-bottom: 1px solid #777;
+  width: 430px;
+  height: 36px;
+}
+
+#dropdown-basic-button:hover{
+  border: 2px solid #777;
 }

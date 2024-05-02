@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import { Container, Row, Col} from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 import { useParams } from 'react-router-dom';
 import DetailDropdown from '../component/DetailDropdown';
 
@@ -20,14 +21,16 @@ const ProductDetail = () => {
   
   return (
     <Container>
-        <Row>
-          <Col className="product-img">
-            <img src={product?.img}/>
+        <Row className="detail-container">
+          <Col md={4} className="product-img">
+            <img className="detail-img" src={product?.img}/>
           </Col>
-          <Col>
-          <div>{product?.title}</div>
-          <div>{product?.price}</div>
+          <Col md={5} className="detail-page">
+          <div className="detail-title">{product?.title}</div>
+          <div className="detail-price">{product?.price}</div>
           <DetailDropdown />
+          <Button className="buy-btn" variant="success">구매하기</Button>
+          
           </Col>
         </Row>
     </Container>
