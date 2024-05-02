@@ -15,11 +15,19 @@ const Login = ({setAuthenticate}) => {
     setAuthenticate(true);
     navigate("/");
   };
+  const logout = () =>{
+    setAuthenticate(false);
+  }
+  const goToMainPage = () => {
+    navigate("/");
+  };
+
 
   return (
     <Container className="login-section">
-      <h1>GEONWORKS</h1>
+      <h1 onClick={goToMainPage}>GEONWORKS</h1>
       <Form className="login-box" onSubmit={(event)=>loginUser(event)}>
+
         <div className="login-tabs">
           <div onClick={() => handleTabClick("ID로그인")}>ID로그인</div>
           <div onClick={() => handleTabClick("일회용 번호")}>일회용 번호</div>
@@ -42,8 +50,8 @@ const Login = ({setAuthenticate}) => {
         </div>
       </Form>
       <ul className="login-list">
-          <li>비밀번호 찾기</li>
-          <li>아이디 찾기</li>
+          <li className="login-menu">비밀번호 찾기</li>
+          <li className="login-menu">아이디 찾기</li>
           <li>회원 가입</li>
         </ul>
         <Link to="https://codingnoona.thinkific.com/" className="img-box" target="_blank">

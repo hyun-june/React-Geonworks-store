@@ -11,6 +11,10 @@ const Navbar = () => {
     navigate("/login");
   };
 
+  const goToMainPage = () => {
+    navigate("/");
+  };
+
   const search=(event)=>{
     if(event.key ==="Enter"){
       let keyword = event.target.value;
@@ -20,13 +24,11 @@ const Navbar = () => {
 
   return (
     <div>
-      <div>
         <div className="login-button" onClick={goToLogin}>
           <FontAwesomeIcon icon={faUser} />
           <div>로그인</div>
         </div>
-      </div>
-      <div className="nav-section">
+      <div className="nav-section" onClick={goToMainPage}>
         <h1>GEONWORKS</h1>
       </div>
       <div className="menu-area">

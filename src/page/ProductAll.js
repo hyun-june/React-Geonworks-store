@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../component/ProductCard';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from "react-router-dom";
 
 const ProductAll = () => {
   const [productlist,setProductList] = useState([]);
-  const [query,setQuery] = useSearchParams();
+  const [query, setQuery] = useSearchParams();
   const getProducts=async()=>{
     let searchQuery = query.get("q") || "";
     console.log("쿼리",searchQuery)
@@ -16,8 +16,8 @@ const ProductAll = () => {
   }
 
   useEffect(()=>{
-    getProducts()
-  },[query])
+    getProducts();
+  },[query]);
 
   return (
     <div>
@@ -40,7 +40,6 @@ const ProductAll = () => {
         ))}
         </Row>
       </Container>
-      
     </div>
   )
 }
