@@ -9,7 +9,7 @@ const ProductAll = () => {
   const getProducts=async()=>{
     let searchQuery = query.get("q") || "";
     console.log("쿼리",searchQuery)
-    let url= `http://localhost:5000/products?q=${searchQuery}`;
+    let url= `https://my-json-server.typicode.com/hyun-june/React-Geonworks-store/products?q=${searchQuery}`;
     let response = await fetch(url)
     let data = await response.json();
     setProductList(data);
