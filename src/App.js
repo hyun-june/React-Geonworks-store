@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div>
-     {!isLoginPage && <Navbar />}
+     {!isLoginPage && <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />}
 
      <Routes>
       <Route path="/" element={<ProductAll/>} />

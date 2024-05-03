@@ -8,7 +8,7 @@ const ProductCard = ({item}) => {
   }
   return (
     <div className="card-section" onClick={showDetail}>
-        <img src={item?.img}/>
+        <img src={item?.img} alt=""/>
         <div>{item?.title}</div>
         <div>{item?.price}</div>
         <div>{item?.new == true ? "NEW" : ""}</div>

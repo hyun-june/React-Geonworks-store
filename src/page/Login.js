@@ -24,10 +24,10 @@ const Login = ({setAuthenticate}) => {
 
 
   return (
+    
     <Container className="login-section">
       <h1 onClick={goToMainPage}>GEONWORKS</h1>
       <Form className="login-box" onSubmit={(event)=>loginUser(event)}>
-
         <div className="login-tabs">
           <div onClick={() => handleTabClick("ID로그인")}>ID로그인</div>
           <div onClick={() => handleTabClick("일회용 번호")}>일회용 번호</div>

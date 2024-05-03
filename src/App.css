@@ -40,6 +40,7 @@ h1 {
 .search-box{
     border-bottom: 1px solid black;
     position: absolute;
+    top: 100px;
     right: 20px;
     padding: 5px;
   }
@@ -217,15 +218,17 @@ h1 {
   border-bottom: 1px solid #777;
   padding: 30px;
 }
+
 .detail-title{
   font-size: 20px;
   font-weight: bolder;
+  width: 430px;
   color: #222222;
 }
 
 .detail-price{
   margin-top: 15px;
-  margin-right: 50px;
+  margin-right: 60px;
   font-size: 24px;
   font-weight: bolder;
   color: #d40022;
@@ -259,3 +262,175 @@ h1 {
 #dropdown-basic-button:hover{
   border: 2px solid #777;
 }
+
+.button-box{
+  display: flex;
+  justify-content: space-around;
+  width: 430px;
+}
+
+.button-list{
+  width: 140px;
+  height: 50px;
+  margin-top: 3em;
+}
+
+/* 햄버거 메뉴*/
+
+.hide{
+  visibility:hidden
+}
+
+.side-menu {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  background-color: #777;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.side-menu-list button {
+  margin: 5px;
+  border: none;
+  background: none;
+  width: 120px;
+}
+
+.side-menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  border: none;
+  background: none;
+}
+
+.side-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-menu-list button:hover {
+  background-color: beige;
+  border-radius: 3px;
+} 
+
+/* .review-container{
+  border: 1px solid black;
+  margin-top: 2em;
+  margin-left: 12em;
+  padding: 10px;
+  width: 950px;
+}
+
+.review-star{
+  color: red;
+}
+
+.review-box{
+  display: flex;
+} */
+
+@media screen and (max-width: 667px) {
+  .menu-area{
+    display: none;
+  }
+  img{
+    width: 350px;
+  }
+
+  .login-box{
+    width: 300px;
+  }
+
+  .login-input input{
+    width: 250px;
+  }
+
+  .btn-area{
+    width: 250px;
+    margin-left: 20px;
+  }
+  
+  .login-list li{
+    font-size: 13px;
+  }
+
+  .detail-img{
+    margin-right: 10px;
+  }
+  .detail-page{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    border: 1px solid #777;
+    align-items: center;
+  }
+
+  .detail-title{
+    font-size: 20px;
+    font-weight: bolder;
+    width: 340px;
+    color: #222222;
+  }
+
+  .detail-price{
+    margin-left: em;
+    font-size: 24px;
+    font-weight: bolder;
+    color: #d40022;
+    text-align: right;
+  }
+
+  #dropdown-menu{
+    border-bottom: 1px solid #777;
+    width: 350px;
+    height: 36px;
+  }
+
+  #dropdown-basic-button{
+    width: 340px;
+  }
+  
+  #dropdown-basic-button:hover{
+    border: 2px solid #777;
+  }
+  
+  .button-box{
+    display: flex;
+    justify-content: space-around;
+    width: 350px;
+  }
+
+  .button-box{
+    display: flex;
+    justify-content: space-around;
+    width: 350px;
+  }
+  .button-list{
+    width:  70px;
+    font-size: 10px;
+    height: 50px;
+    margin-top: 3em;
+  }
+  .buy-btn{
+    position: relative;
+    width: 340px;
+    height: 40px;
+    top: 1.5em;
+  }
+
+  .hide {
+    visibility:visible;
+  }
+  .menu {
+    display: none;
+  }
+  .search-box{
+    display: none;
+  }
+}
+
