@@ -2,17 +2,18 @@ import React, { useEffect, useState } from 'react'
 import ProductCard from '../component/ProductCard';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useSearchParams } from "react-router-dom";
+import { productAction } from "../redux/actions/productAction";
+import { useDispatch, useSelector } from 'react-redux';
 
 const ProductAll = () => {
-  const [productlist,setProductList] = useState([]);
+  const productlist = useSelector((state)=>state.product.productlist)
   const [query, setQuery] = useSearchParams();
-  const getProducts=async()=>{
+  const dispatch = useDispatch();
+
+  const getProducts=()=>{
     let searchQuery = query.get("q") || "";
-    console.log("쿼리",searchQuery)
-    let url= `https://my-json-server.typicode.com/hyun-june/React-Geonworks-store/products?q=${searchQuery}`;
-    let response = await fetch(url)
-    let data = await response.json();
-    setProductList(data);
+    console.log("쿼리 값은?",searchQuery);
+    dispatch(productAction.getProducts(searchQuery));
   }
 
   useEffect(()=>{

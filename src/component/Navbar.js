@@ -3,11 +3,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faSearch, faArrowRightFromBracket, faBars } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { authenticateAction } from "../redux/actions/authenticateAction";
 
-const Navbar = ({authenticate, setAuthenticate}) => {
+const Navbar = () => {
   const menulist = ["All Products","KEYBOARD KIT","PLATE","PCB","VENOM","SWITCHES","KEYCAP","FOAM","TOOLS","ETC","묻고 답하기","더보기"];
   const navigate = useNavigate();
+  const dispatch =useDispatch();
   let [width, setWidth] = useState(0);
+  const authenticate = useSelector((state)=>state.auth.authenticate);
+
   const goToLogin =()=>{
     navigate("/login");
   };
@@ -24,7 +29,8 @@ const Navbar = ({authenticate, setAuthenticate}) => {
   }
 
   const handleLogout = () => {
-    setAuthenticate(false);
+    dispatch(authenticateAction.logout());
+    console.log(authenticate)
   };
 
   return (
@@ -45,7 +51,7 @@ const Navbar = ({authenticate, setAuthenticate}) => {
         </div>
       </div>
       {authenticate ? (
-          <div className="login-button" onClick={()=> setAuthenticate(false)}>
+          <div className="login-button" onClick={handleLogout}>
             <FontAwesomeIcon icon={faArrowRightFromBracket} />
             <div>&nbsp;로그아웃</div>
           </div>) : (

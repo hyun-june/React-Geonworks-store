@@ -7,6 +7,7 @@ import ProductDetail from './page/ProductDetail';
 import Login from './page/Login';
 import Navbar from "./component/Navbar";
 import PrivateRoute from "./route/PrivateRoute";
+import { useSelector } from "react-redux";
 
 // 1. 전체 상품 페이지, 로그인 페이지, 상품 상세 페이지
 // 2. 전체 상품페이지에서는 전체 상품을 볼 수 있다.
@@ -17,7 +18,7 @@ import PrivateRoute from "./route/PrivateRoute";
 // 5-1. 로그아웃이 되면 상품 디테일 페이지를 볼 수 없다. 다시 로그인 페이지가 나온다.
 // 6. 상품을 검색할 수 있다.
 function App() {
-  const [authenticate,setAuthenticate]=useState(false) //true = 로그인 / false = 비로그인
+  const authenticate = useSelector((state)=>state.auth.authenticate)
   const location = useLocation();
   const isLoginPage = location.pathname ==="/login";
 
@@ -27,13 +28,12 @@ function App() {
 
   return (
     <div>
-     {!isLoginPage && <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate} />}
+     {!isLoginPage && <Navbar authenticate={authenticate} />}
 
      <Routes>
       <Route path="/" element={<ProductAll/>} />
-      <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>} />
-      <Route path="/product/:id" element={<PrivateRoute authenticate={authenticate}/>} />
-      {/* <Route path="/product/:id" element={authenticate ? <ProductDetail/>:<Login />} /> */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/product/:id" element={<PrivateRoute authenticate={authenticate} />} />
      </Routes>
     </div>
   );

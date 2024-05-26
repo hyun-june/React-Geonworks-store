@@ -1,23 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import {Container, Form} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import {useNavigate} from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { authenticateAction } from "../redux/actions/authenticateAction";
 
-const Login = ({setAuthenticate}) => {
+const Login = () => {
+  const [id,setId]=useState('');
+  const [password,setPassword]=useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleTabClick = (content) => {
   };
   const loginUser = (event) => {
     event.preventDefault();
-    setAuthenticate(true);
+    dispatch(authenticateAction.login(id,password));
     navigate("/");
   };
-  const logout = () =>{
-    setAuthenticate(false);
-  }
+
   const goToMainPage = () => {
     navigate("/");
   };
@@ -35,9 +39,9 @@ const Login = ({setAuthenticate}) => {
         </div>
         <div className="login-input">
           <FontAwesomeIcon icon={faUser} className="input-idicon" />
-          <input type="text" placeholder="아이디" id="id-input" />
+          <input type="text" placeholder="아이디" id="id-input" onChange={(event)=>setId(event.target.value)} />
           <FontAwesomeIcon icon={faLock} className="input-pwicon" />
-          <input type="password" placeholder="비밀번호" id="password-input" />
+          <input type="password" placeholder="비밀번호" id="password-input" onChange={(event)=>setPassword(event.target.value)} />
         </div>
         <div className="auto-login">
           <input type="button" id="auto-btn" />
