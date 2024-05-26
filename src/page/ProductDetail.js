@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import DetailDropdown from '../component/DetailDropdown';
 import DetailButton from '../component/DetailButton';
 import { useDispatch, useSelector } from 'react-redux';
-import { productAction } from '../redux/actions/productAction';
+import { fetchProductDetail } from '../redux/reducers/productSlice';
 
 const ProductDetail = () => {
   let { id } = useParams();
@@ -13,13 +13,13 @@ const ProductDetail = () => {
   const dispatch = useDispatch();
 
   const getProductDetail =() => {
-    dispatch(productAction.getProductDetail(id));
+    dispatch(fetchProductDetail(id));
   }
 
   useEffect(() => {
-    getProductDetail();
+   getProductDetail();
   }, []);
-
+  
   return (
     <Container>
       <Row className="detail-container">

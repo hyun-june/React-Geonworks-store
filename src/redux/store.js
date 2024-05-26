@@ -2,7 +2,7 @@ import {createStore, applyMiddleware} from "redux";
 import { composeWithDevTools } from '@redux-devtools/extension';
 import { thunk } from 'redux-thunk'
 import rootRedecer from "./reducers"
-import productReducer from "./reducers/productReducer";
+import productSlice from "./reducers/productSlice";
 import authenciateReducer from "./reducers/authenticateReducer";
 
 import { configureStore } from "@reduxjs/toolkit";
@@ -12,7 +12,7 @@ import { configureStore } from "@reduxjs/toolkit";
 const store = configureStore({
     reducer:{
         auth : authenciateReducer,
-        product : productReducer        
+        product : productSlice      
     }
 })
 
