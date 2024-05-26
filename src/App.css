@@ -334,6 +334,18 @@ h1 {
   display: flex;
 } */
 
+@media screen and (max-width:1199px) and (min-width:668px) {
+  .container{
+    position: relative;
+  }
+  .detail-container{
+    position: absolute;
+    justify-content: center;
+    width: 1140px;
+    left: -25%;
+  }
+}
+
 @media screen and (max-width: 667px) {
   .menu-area{
     display: none;
@@ -360,7 +372,7 @@ h1 {
   }
 
   .detail-img{
-    margin-right: 10px;
+    margin-right: 12px;
   }
   .detail-page{
     display: flex;
@@ -433,4 +445,11 @@ h1 {
     display: none;
   }
 }
+
+@media screen and (max-width: 414px) and (min-width:376px) {
+  .detail-img{
+    margin-right: 32px;
+  }
+}
+
 
